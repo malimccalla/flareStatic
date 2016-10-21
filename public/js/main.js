@@ -10,4 +10,14 @@ $(document).ready(function() {
     $('input').removeClass('input-lg');
     $('button').removeClass('btn-lg');
   }).trigger('resize');
+
+  $('button').click(function(event) {
+    var $email = $('input').val();
+    event.preventDefault();
+    if ( /(.+)@(.+){2,}\.(.+){2,}/.test($email) ) {
+      $.post('http://localhost:3000/', { email: $email })
+      $('input').val('');
+    }
+    // console.log($email);
+  })
 });
