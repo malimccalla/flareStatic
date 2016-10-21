@@ -15,7 +15,7 @@ $(document).ready(function() {
     var $email = $('input').val();
     event.preventDefault();
     if ( /(.+)@(.+){2,}\.(.+){2,}/.test($email) ) {
-      $.post('http://localhost:3000/', { email: $email })
+      $.post('http://flare-app-server.appspot.com/', { email: $email })
       $('input').val('');
     }
     // console.log($email);
