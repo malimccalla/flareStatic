@@ -6,7 +6,6 @@
 
 .footer {
   position: absolute;
-  bottom: 0;
   left: 0;
   background-color: #fe3901;
   width: 100%;
@@ -52,8 +51,16 @@ input {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 }
 
-.error {
+.green {
+  color: green;
+}
+
+.red {
   color: red;
+}
+
+.message {
+  font-family: 'Work Sans', sans-serif;
   text-align: center;
   margin-top: 2rem;
 }
