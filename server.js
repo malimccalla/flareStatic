@@ -32,9 +32,10 @@ app.get('*', function(req, res) {
 
 app.post('/', function(req, res) {
   var email = req.body.email
+  var date = req.body.date
   if ( /(.+)@(.+){2,}\.(.+){2,}/.test(email) ) {
     console.log(email);
-    emailInvites.push({ email });
+    emailInvites.push({ email, date, invited: false });
     res.status(200).send('Email sent to firebase')
   }
   res.status(422).send({ error: 'Please enter a valid email' });

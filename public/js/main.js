@@ -15,7 +15,12 @@ $(document).ready(function() {
     var $email = $('input').val();
     event.preventDefault();
     if ( /(.+)@(.+){2,}\.(.+){2,}/.test($email) ) {
-      $.post('http://flare-app-server.appspot.com/', { email: $email });
+      var d = Date.now();
+      var date = d.toString();
+      $.post('http://flare-app-server.appspot.com/', {
+        email: $email,
+        date: date
+      });
       $('input').val('');
       $('.message').removeClass('red');
       $('.message').addClass('green');
